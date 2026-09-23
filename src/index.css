@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — from the PieCAD pitch deck */
+  --color-ink-950: #0e121a;
+  --color-ink-900: #151a24;
+  --color-ink-800: #1c222e;
+  --color-ink-700: #262d3b;
+  --color-ink-600: #3a4354;
+
+  --color-paper-50: #f7f6f3;
+  --color-paper-100: #efeee9;
+  --color-paper-200: #e3e1da;
+
+  --color-accent-500: #e8622a;
+  --color-accent-600: #cf5120;
+  --color-accent-300: #f08a5c;
+
+  --color-slate-400: #8b94a6;
+  --color-slate-300: #aab2c1;
+
+  --font-serif: "Source Serif 4", Cambria, Georgia, "Times New Roman", serif;
+  --font-sans:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-ink-950);
+    color: var(--color-paper-50);
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-accent-500);
+    color: #fff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent-500);
+  }
+
+  .blueprint-grid {
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.045) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.045) 1px,
+        transparent 1px
+      );
+    background-size: 56px 56px;
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
