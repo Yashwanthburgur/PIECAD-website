@@ -1,8 +1,8 @@
 import { Nav } from './components/Nav'
 import { Hero } from './sections/Hero'
-import { AgentLoop } from './sections/AgentLoop'
-import { ShapeVsEngineering } from './sections/ShapeVsEngineering'
-import { Origin } from './sections/Origin'
+import { Problem } from './sections/Problem'
+import { PieCAD } from './sections/PieCAD'
+import { Prototype } from './sections/Prototype'
 import { Vision } from './sections/Vision'
 import { Founder } from './sections/Founder'
 import { Footer } from './sections/Footer'
@@ -13,9 +13,9 @@ function App() {
       <Nav />
       <main>
         <Hero />
-        <AgentLoop />
-        <ShapeVsEngineering />
-        <Origin />
+        <Problem />
+        <PieCAD />
+        <Prototype />
         <Vision />
         <Founder />
       </main>
